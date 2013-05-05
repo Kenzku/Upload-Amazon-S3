@@ -5,10 +5,13 @@
 
 var express = require('express')
   , s3 = require('./routes/s3')
+  , nconf = require('nconf')
   , http = require('http')
   , path = require('path');
 
 var app = express();
+
+nconf.env();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -25,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
-
+console.log();
 app.get('/', s3.show);
 
 http.createServer(app).listen(app.get('port'), function(){
