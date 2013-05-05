@@ -4,7 +4,10 @@
  * Time: 16:23
  */
 var Policy = require('../lib/Policy')
-    , assert = require('assert');
+    , assert = require('assert')
+    , chai = require('chai')
+    , CONSTANT = require('../lib/CONSTANT')
+    ;
 
 function ok(expr, msg) {
     if (!expr) throw new Error(msg);
@@ -13,8 +16,5 @@ function ok(expr, msg) {
 suite('Policy Base 64');
 test('should return base 64 encoding',function(){
     var aPolicy = new Policy();
-    aPolicy.toBase64();
-//    console.log(aPolicy.policy);
-
-    ok(true);
+    chai.expect(aPolicy.toBase64()).to.match(CONSTANT.BASE64.REG_EXR);
 });
