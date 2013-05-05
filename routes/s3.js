@@ -15,7 +15,7 @@ exports.show = function(req, res){
 
     res.render('s3',{
         title:'S3 POST Form',
-        action : ACTION,
+        ACTION : ACTION,
         YOUR_AWS_ACCESS_KEY : YOUR_AWS_ACCESS_KEY,
         YOUR_POLICY_DOCUMENT_BASE64_ENCODED : YOUR_POLICY_DOCUMENT_BASE64_ENCODED,
         YOUR_CALCULATED_SIGNATURE : YOUR_CALCULATED_SIGNATURE
