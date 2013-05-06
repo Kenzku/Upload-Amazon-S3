@@ -14,7 +14,13 @@ function ok(expr, msg) {
 }
 // mocha ./test/ -R spec -u qunit -t 6000
 suite('Policy Base 64');
-test('should return base 64 encoding',function(){
+test('should return base 64 encoding policy document',function(){
     var aPolicy = new Policy();
-    chai.expect(aPolicy.toBase64()).to.match(CONSTANT.BASE64.REG_EXR);
+    chai.expect(aPolicy.toBase64()).to.match(CONSTANT.BASE64.REG_EXR.v2);
+});
+
+test('should return base 64 encoding signature', function(){
+   var aPolicy = new Policy();
+    // because Chai does not work.
+   assert.equal(aPolicy.getSignature(),aPolicy.getSignature().match(CONSTANT.BASE64.REG_EXR.v2)[0]);
 });

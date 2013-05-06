@@ -9,7 +9,7 @@ exports.show = function(req, res){
         // change to your AWS S3 bucket
         var ACTION = nconf.get('S3_BUCKET');
         // I put the key in my local environment variable in .bash_profile
-        var YOUR_AWS_ACCESS_KEY = nconf.get('YOUR_AWS_ACCESS_KEY');
+        var YOUR_AWS_ACCESS_KEY = nconf.get('AWS_ACCESS_KEY');
         var YOUR_POLICY_DOCUMENT_BASE64_ENCODED = '';
         var YOUR_CALCULATED_SIGNATURE = '';
 
