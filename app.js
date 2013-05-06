@@ -28,7 +28,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
-console.log();
 app.get('/', s3.show);
 
 http.createServer(app).listen(app.get('port'), function(){

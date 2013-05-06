@@ -17,6 +17,12 @@ exports.show = function(req, res){
     var YOUR_POLICY_DOCUMENT_BASE64_ENCODED = aPolicy.toBase64() || null;
     var YOUR_CALCULATED_SIGNATURE = aPolicy.getSignature() || null;
 
+    /**
+     * please note that YOUR_POLICY_DOCUMENT_BASE64_ENCODED and
+     * YOUR_CALCULATED_SIGNATURE can be used multiple times,
+     * and once calculated, it can use without a web server
+     * i.e. put them in a static html form, it also functions
+     */
     res.render('s3',{
         title:'S3 POST Form',
         ACTION : ACTION,
